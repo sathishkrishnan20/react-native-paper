@@ -135,7 +135,8 @@ const styles = StyleSheet.create({
     borderWidth:0.5,
     height:16,
     width:16,
-    marginTop:10
+    marginTop:10,
+    marginRight: 3,
   },
   viewStyle:{
     backgroundColor:"#775DA3",
