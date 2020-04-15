@@ -33,6 +33,8 @@ type Props = $RemoveChildren<typeof TouchableRipple> & {
    * @optional
    */
   theme: Theme;
+  customContainerStyle?: object; 
+  customViewStyle?: object; 
 };
 
 /**
@@ -54,7 +56,7 @@ class RadioButtonIOS extends React.Component<Props> {
   static displayName = 'RadioButton.IOS';
 
   render() {
-    const { disabled, onPress, theme, status, value, ...rest } = this.props;
+    const { disabled, onPress, theme, status, customContainerStyle, customViewStyle, value, ...rest } = this.props;
 
     const checkedColor = disabled
       ? theme.colors.disabled
@@ -107,14 +109,14 @@ class RadioButtonIOS extends React.Component<Props> {
               accessibilityRole="button"
               accessibilityStates={disabled ? ['disabled'] : []}
               accessibilityLiveRegion="polite"
-              style={styles.container}
+              style={customContainerStyle ? customContainerStyle : styles.container}
             >
-              <View style={{ opacity: checked ? 1 : 0 }}>
+               <View style={[{ opacity: checked ? 1 : 0}, customViewStyle ? customViewStyle : styles.viewStyle ]}>
                 <MaterialCommunityIcon
                   allowFontScaling={false}
                   name="check"
-                  size={24}
-                  color={checkedColor}
+                  size={15}
+                  color={"#fff"}
                   direction={I18nManager.isRTL ? 'rtl' : 'ltr'}
                 />
               </View>
@@ -128,9 +130,17 @@ class RadioButtonIOS extends React.Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 18,
-    padding: 6,
+    borderRadius: 50/2,
+    borderColor:'#000',
+    borderWidth:0.5,
+    height:16,
+    width:16,
+    marginTop:10
   },
+  viewStyle:{
+    backgroundColor:"#775DA3",
+   
+   }
 });
 
 export default withTheme(RadioButtonIOS);
