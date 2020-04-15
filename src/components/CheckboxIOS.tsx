@@ -73,7 +73,7 @@ class CheckboxIOS extends React.Component<Props> {
     }
 
     const icon = indeterminate ? 'minus' : 'check';
-    console.log('Logging into RN CHeckbox');
+    
     return (
       <TouchableRipple
       {...rest}
