@@ -71,31 +71,9 @@ class CheckboxIOS extends React.Component<Props> {
     }
 
     const icon = indeterminate ? 'minus' : 'check';
-
+    console.log('Logging into RN CHeckbox');
     return (
-      <TouchableRipple
-        {...rest}
-        borderless
-        rippleColor={rippleColor}
-        onPress={onPress}
-        disabled={disabled}
-        accessibilityTraits={disabled ? ['button', 'disabled'] : 'button'}
-        accessibilityComponentType="button"
-        accessibilityRole="button"
-        accessibilityStates={disabled ? ['disabled'] : []}
-        accessibilityLiveRegion="polite"
-        style={styles.container}
-      >
-        <View style={{ opacity: indeterminate || checked ? 1 : 0 }}>
-          <MaterialCommunityIcon
-            allowFontScaling={false}
-            name={icon}
-            size={24}
-            color={checkedColor}
-            direction={I18nManager.isRTL ? 'rtl' : 'ltr'}
-          />
-        </View>
-      </TouchableRipple>
+      null
     );
   }
 }
