@@ -105,6 +105,7 @@ class CheckboxIOS extends React.Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
+    marginRight: 3,
     borderRadius: 2,
     height:16, 
     borderColor:'#000',
