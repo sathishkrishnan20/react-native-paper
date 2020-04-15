@@ -87,7 +87,7 @@ class CheckboxIOS extends React.Component<Props> {
         accessibilityLiveRegion="polite"	
         style={styles.container}	
       >	
-        <View style={{ opacity: indeterminate || checked ? 1 : 0 }}>	
+        <View style={[ {opacity: indeterminate || checked ? 1 : 0 },styles.viewStyle]}>
           <MaterialCommunityIcon	
             allowFontScaling={false}	
             name={icon}	
@@ -104,9 +104,15 @@ class CheckboxIOS extends React.Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 18,
-    padding: 6,
+     borderRadius: 2,
+     height:16, 
+     borderColor:'#000',
+     borderWidth:0.5,
   },
+  viewStyle:{
+   marginTop:-3,
+   backgroundColor:"#775DA3"
+  }
 });
 
 export default withTheme(CheckboxIOS);
